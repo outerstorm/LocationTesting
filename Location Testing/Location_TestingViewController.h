@@ -4,7 +4,9 @@
 //
 //  Created by Justin Storm on 5/3/11.
 //  Copyright 2011 HealthMEDX. All rights reserved.
-//
+// Edited by Andy S.
+
+
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
