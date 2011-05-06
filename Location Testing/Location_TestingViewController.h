@@ -7,9 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface Location_TestingViewController : UIViewController {
+@interface Location_TestingViewController : UIViewController
+    <CLLocationManagerDelegate> {
     
+    IBOutlet UILabel *latitudeLabel;
+    IBOutlet UILabel *longitudeLabel;
+    IBOutlet UILabel *eventDateLabel;
+    IBOutlet MKMapView *mapView;
+        
+@private
+    BOOL sigChangeTrackingOn;
+    CLLocationManager *locationManager;
+    NSURLConnection *conn;	 
+    CLLocation  *lastLocation;
+    NSDate *lastEventDate;    
 }
 
 @end

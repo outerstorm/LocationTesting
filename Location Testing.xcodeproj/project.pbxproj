@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D07D394213722CF2002A808A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07D394113722CF1002A808A /* MapKit.framework */; };
+		D07D394613723225002A808A /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D07D394513723225002A808A /* MyAnnotation.m */; };
 		D09EAA8A1370DCC80052678B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09EAA891370DCC80052678B /* UIKit.framework */; };
 		D09EAA8C1370DCC80052678B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09EAA8B1370DCC80052678B /* Foundation.framework */; };
 		D09EAA8E1370DCC80052678B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09EAA8D1370DCC80052678B /* CoreGraphics.framework */; };
@@ -22,6 +24,7 @@
 		D09EAAB41370DCC80052678B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D09EAAB21370DCC80052678B /* InfoPlist.strings */; };
 		D09EAAB71370DCC80052678B /* Location_TestingTests.h in Resources */ = {isa = PBXBuildFile; fileRef = D09EAAB61370DCC80052678B /* Location_TestingTests.h */; };
 		D09EAAB91370DCC80052678B /* Location_TestingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D09EAAB81370DCC80052678B /* Location_TestingTests.m */; };
+		D09EAAC31370DF6F0052678B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09EAAC21370DF6F0052678B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,26 +38,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D07D394113722CF1002A808A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D07D394413723225002A808A /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		D07D394513723225002A808A /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		D09EAA851370DCC80052678B /* Location Testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Testing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09EAA891370DCC80052678B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D09EAA8B1370DCC80052678B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D09EAA8D1370DCC80052678B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D09EAA911370DCC80052678B /* Location Testing-Info.plist */ = {isa = PBXFileReference; path = "Location Testing-Info.plist"; sourceTree = "<group>"; };
+		D09EAA911370DCC80052678B /* Location Testing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Location Testing-Info.plist"; sourceTree = "<group>"; };
 		D09EAA931370DCC80052678B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D09EAA951370DCC80052678B /* Location Testing-Prefix.pch */ = {isa = PBXFileReference; path = "Location Testing-Prefix.pch"; sourceTree = "<group>"; };
+		D09EAA951370DCC80052678B /* Location Testing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Location Testing-Prefix.pch"; sourceTree = "<group>"; };
 		D09EAA961370DCC80052678B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D09EAA981370DCC80052678B /* Location_TestingAppDelegate.h */ = {isa = PBXFileReference; path = Location_TestingAppDelegate.h; sourceTree = "<group>"; };
+		D09EAA981370DCC80052678B /* Location_TestingAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location_TestingAppDelegate.h; sourceTree = "<group>"; };
 		D09EAA991370DCC80052678B /* Location_TestingAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location_TestingAppDelegate.m; sourceTree = "<group>"; };
 		D09EAA9C1370DCC80052678B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		D09EAA9E1370DCC80052678B /* Location_TestingViewController.h */ = {isa = PBXFileReference; path = Location_TestingViewController.h; sourceTree = "<group>"; };
+		D09EAA9E1370DCC80052678B /* Location_TestingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location_TestingViewController.h; sourceTree = "<group>"; };
 		D09EAA9F1370DCC80052678B /* Location_TestingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location_TestingViewController.m; sourceTree = "<group>"; };
 		D09EAAA21370DCC80052678B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Location_TestingViewController.xib; sourceTree = "<group>"; };
 		D09EAAA91370DCC80052678B /* Location TestingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Location TestingTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D09EAAB11370DCC80052678B /* Location TestingTests-Info.plist */ = {isa = PBXFileReference; path = "Location TestingTests-Info.plist"; sourceTree = "<group>"; };
+		D09EAAB11370DCC80052678B /* Location TestingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Location TestingTests-Info.plist"; sourceTree = "<group>"; };
 		D09EAAB31370DCC80052678B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D09EAAB51370DCC80052678B /* Location TestingTests-Prefix.pch */ = {isa = PBXFileReference; path = "Location TestingTests-Prefix.pch"; sourceTree = "<group>"; };
+		D09EAAB51370DCC80052678B /* Location TestingTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Location TestingTests-Prefix.pch"; sourceTree = "<group>"; };
 		D09EAAB61370DCC80052678B /* Location_TestingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location_TestingTests.h; sourceTree = "<group>"; };
 		D09EAAB81370DCC80052678B /* Location_TestingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location_TestingTests.m; sourceTree = "<group>"; };
+		D09EAAC21370DF6F0052678B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07D394213722CF2002A808A /* MapKit.framework in Frameworks */,
+				D09EAAC31370DF6F0052678B /* CoreLocation.framework in Frameworks */,
 				D09EAA8A1370DCC80052678B /* UIKit.framework in Frameworks */,
 				D09EAA8C1370DCC80052678B /* Foundation.framework in Frameworks */,
 				D09EAA8E1370DCC80052678B /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +112,8 @@
 		D09EAA881370DCC80052678B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D07D394113722CF1002A808A /* MapKit.framework */,
+				D09EAAC21370DF6F0052678B /* CoreLocation.framework */,
 				D09EAA891370DCC80052678B /* UIKit.framework */,
 				D09EAA8B1370DCC80052678B /* Foundation.framework */,
 				D09EAA8D1370DCC80052678B /* CoreGraphics.framework */,
@@ -120,6 +131,8 @@
 				D09EAA9F1370DCC80052678B /* Location_TestingViewController.m */,
 				D09EAAA11370DCC80052678B /* Location_TestingViewController.xib */,
 				D09EAA901370DCC80052678B /* Supporting Files */,
+				D07D394413723225002A808A /* MyAnnotation.h */,
+				D07D394513723225002A808A /* MyAnnotation.m */,
 			);
 			path = "Location Testing";
 			sourceTree = "<group>";
@@ -266,6 +279,7 @@
 				D09EAA971370DCC80052678B /* main.m in Sources */,
 				D09EAA9A1370DCC80052678B /* Location_TestingAppDelegate.m in Sources */,
 				D09EAAA01370DCC80052678B /* Location_TestingViewController.m in Sources */,
+				D07D394613723225002A808A /* MyAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +378,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Location Testing/Location Testing-Prefix.pch";
 				INFOPLIST_FILE = "Location Testing/Location Testing-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -377,6 +392,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Location Testing/Location Testing-Prefix.pch";
 				INFOPLIST_FILE = "Location Testing/Location Testing-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -446,6 +462,7 @@
 				D09EAABE1370DCC80052678B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D09EAABF1370DCC80052678B /* Build configuration list for PBXNativeTarget "Location TestingTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +471,7 @@
 				D09EAAC11370DCC80052678B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
