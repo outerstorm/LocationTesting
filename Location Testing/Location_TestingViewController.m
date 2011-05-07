@@ -21,11 +21,10 @@
 
 - (void)dealloc
 {
-    [super dealloc];
-    
     [latitudeLabel release], latitudeLabel=nil;
     [longitudeLabel release], longitudeLabel=nil;
     [eventDateLabel release], eventDateLabel=nil;
+    [mapView release], mapView=nil;
     
     if (locationManager) {
         [locationManager release], locationManager=nil;
@@ -36,6 +35,12 @@
     if (lastEventDate) {
         [lastEventDate release], lastEventDate=nil;
     }
+    if (conn) {
+        [conn release], conn=nil;
+    }
+    
+    [super dealloc];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,6 +153,10 @@
 
 -(void) logLocation:(CLLocation *)currentLocation forDateTime:(NSDate *)eventDate {
     if (lastLocation) {
+        if (lastLocation.coordinate.latitude==currentLocation.coordinate.latitude && lastLocation.coordinate.longitude==currentLocation.coordinate.longitude) {
+            return;
+        }
+        
         [lastLocation release], lastLocation=nil;
     }
     if (lastEventDate) {
@@ -156,19 +165,8 @@
     
     lastLocation = [currentLocation copy];
     lastEventDate = [eventDate copy];
-
     
     NSString *deviceId = [[UIDevice currentDevice] uniqueIdentifier];
-    
-    /*
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateStyle:NSDateFormatterShortStyle];
-    [formatter setTimeStyle:NSDateFormatterMediumStyle];
-    [formatter setDoesRelativeDateFormatting:NO];
-    NSString *eventDateStr = [formatter stringFromDate:lastEventDate];
-    [formatter release], formatter=nil;   
-    */
-    
     NSString *latitude = [NSString stringWithFormat:@"%+.6f", currentLocation.coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%+.6f", currentLocation.coordinate.longitude];
     NSString *urlStr = @"http://morning-planet-377.heroku.com/locations";
