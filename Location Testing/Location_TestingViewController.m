@@ -57,6 +57,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
+    NSLog(@"viewDidLoad");
     
     lastLocation=nil;
     lastEventDate=nil;
@@ -64,7 +66,8 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    [locationManager startUpdatingLocation];
+    //[locationManager startUpdatingLocation];
+    [self startSignificantChangeTracking];
 }
 
 - (void)viewDidUnload
@@ -75,6 +78,8 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    NSLog(@"viewWillAppear");
+
     [self updateUILocation];
 }
 
@@ -85,6 +90,8 @@
 }
 
 -(void) startSignificantChangeTracking {
+    NSLog(@"startSignificantChangeTracking");
+    
     sigChangeTrackingOn=YES;
     [locationManager startMonitoringSignificantLocationChanges];
 }
@@ -94,26 +101,32 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    NSLog(@"locationManagerDelegate");
+    
     // If it's a relatively recent event, turn off updates to save power
     NSDate* eventDate = newLocation.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 60.0)
+    if (abs(howRecent) < 600.0)
     {
         NSLog(@"latitude %+.6f, longitude %+.6f\n",
               newLocation.coordinate.latitude,
               newLocation.coordinate.longitude);
 
         [self logLocation:newLocation forDateTime:eventDate];
-        
+
+        /*
         if (!sigChangeTrackingOn) {
             [locationManager stopUpdatingLocation];
             [self startSignificantChangeTracking];
         }
+        */
     }
     // else skip the event and process the next one.
 }
 
 -(void) updateUILocation {
+    NSLog(@"updateUILocation");
+    
     if (lastLocation && lastEventDate) {
         latitudeLabel.text = [NSString stringWithFormat:@"%+.6f", lastLocation.coordinate.latitude];
         longitudeLabel.text = [NSString stringWithFormat:@"%+.6f", lastLocation.coordinate.longitude];
@@ -152,6 +165,8 @@
 }
 
 -(void) logLocation:(CLLocation *)currentLocation forDateTime:(NSDate *)eventDate {
+    NSLog(@"logLocation");
+    
     if (lastLocation) {
         if (lastLocation.coordinate.latitude==currentLocation.coordinate.latitude && lastLocation.coordinate.longitude==currentLocation.coordinate.longitude) {
             return;
@@ -182,7 +197,7 @@
 
     conn = [[NSURLConnection alloc] initWithRequest:req delegate:self];
     
-    [self performSelectorOnMainThread:@selector(updateUILocation) withObject:nil waitUntilDone:NO];
+    //[self performSelectorOnMainThread:@selector(updateUILocation) withObject:nil waitUntilDone:NO];
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
